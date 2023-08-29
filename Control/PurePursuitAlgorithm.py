@@ -1,5 +1,7 @@
 import numpy as np
 import math
+import os, sys
+
 
 def pure_pursuit(path_array,my_point,path_length,alpha):
     min_dist = float('inf')
@@ -21,8 +23,10 @@ def pure_pursuit(path_array,my_point,path_length,alpha):
     delta= np.rad2deg(delta1)
     return waypoint,ld,delta
 
+
+
 if __name__=="__main__":
-    path = np.loadtxt('path1.txt',delimiter='\t',unpack=False)
+    path = np.loadtxt('Control/path1.txt',delimiter='\t',unpack=False)
     path_array = np.array(path)
     path_length=len(path_array)
     my_point = np.array([5.81, 3.9675])
